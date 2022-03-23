@@ -16,13 +16,13 @@ mongoose.connect(MONGODB_URI);
 //Middleware
 app.use(express.json())
 app.use(cors())
-app.use(
-  session({
-    secret: process.env.SECRET,
-    resave: false,
-    saveUninitialized: false
-  })
-)
+// app.use(
+//   session({
+//     secret: process.env.SECRET,
+//     resave: false,
+//     saveUninitialized: false
+//   })
+// )
 
 
 
