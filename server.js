@@ -15,7 +15,7 @@ const foodController = require('./controllers/food.js')
 const gearController = require('./controllers/gear.js')
 
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8000;
 const MONGODB_URI = process.env.MONGODB_URI;
 const SECRET = process.env.SECRET
 mongoose.connect(MONGODB_URI);
@@ -53,6 +53,6 @@ db.on('connected', () => console.log('mongo connected: ', MONGODB_URI));
 db.on('disconnected', () => console.log('mongo disconnected'));
 
 
-app.listen(process.env.PORT || 3000, function(){
+app.listen(process.env.PORT || 8000, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
