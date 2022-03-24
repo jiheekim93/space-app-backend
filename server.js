@@ -7,6 +7,11 @@ const app = express ();
 require('dotenv').config()
 const db = mongoose.connection;
 
+const planetController = require('./controllers/planet.js')
+const ticketController = require('./controllers/ticket.js')
+const foodController = require('./controllers/food.js')
+const gearController = require('./controllers/gear.js')
+
 
 const PORT = process.env.PORT || 3000;
 const MONGODB_URI = process.env.MONGODB_URI;
@@ -26,16 +31,14 @@ app.use(cors())
 
 
 
-
-// app.use('/sessions', sessionsController)
+app.use('/planets', planetController)
+app.use('/tickets', ticketController)
+app.use('/food', foodController)
+app.use('/gear', gearController)
 
 app.get('/' , (req, res) => {
   res.send('Hello World!');
 });
-
-app.get('/both', (req,res) =>{
-  res.send('okay it works')
-} )
 
 
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
