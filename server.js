@@ -9,7 +9,7 @@ const db = mongoose.connection;
 
 const io = require('socket.io')({
   cors: {
-      origin:'http://localhost:3000',
+      origin:'http://localhost:8000',
       credentials:true,
       allowedHeaders: ["access-token"],
   },
