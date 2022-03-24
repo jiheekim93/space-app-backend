@@ -1,13 +1,19 @@
 const express = require('express');
 const mongoose = require ('mongoose');
 const session = require('express-session')
-const io = require('socket.io');
 
 const cors = require('cors')
 const app = express ();
 require('dotenv').config()
 const db = mongoose.connection;
 
+const io = require('socket.io')({
+  cors: {
+      origin:'http://localhost:3000',
+      credentials:true,
+      allowedHeaders: ["access-token"],
+  },
+})
 
 const planetController = require('./controllers/planet.js')
 const ticketController = require('./controllers/ticket.js')
