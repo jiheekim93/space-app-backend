@@ -7,13 +7,7 @@ const app = express ();
 require('dotenv').config()
 const db = mongoose.connection;
 
-const io = require('socket.io')({
-  cors: {
-      origin:'http://localhost:54322',
-      credentials:true,
-      allowedHeaders: ["access-token"],
-  },
-})
+
 
 const planetController = require('./controllers/planet.js')
 const ticketController = require('./controllers/ticket.js')
@@ -28,6 +22,13 @@ mongoose.connect(MONGODB_URI);
 //Middleware
 app.use(express.json())
 app.use(cors())
+const io = require('socket.io')({
+  cors: {
+      origin:'http://localhost:54322',
+      methods: ["GET", "POST"]
+  },
+})
+
 // app.use(
 //   session({
 //     secret: process.env.SECRET,
