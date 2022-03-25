@@ -7,8 +7,6 @@ const app = express ();
 require('dotenv').config()
 const db = mongoose.connection;
 
-
-
 const planetController = require('./controllers/planet.js')
 const ticketController = require('./controllers/ticket.js')
 const foodController = require('./controllers/food.js')
