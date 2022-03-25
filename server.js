@@ -17,6 +17,7 @@ const PORT = process.env.PORT || 3000;
 const MONGODB_URI = process.env.MONGODB_URI;
 const SECRET = process.env.SECRET
 mongoose.connect(MONGODB_URI);
+
 //Middleware
 app.use(express.json())
 app.use(cors())

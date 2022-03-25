@@ -7,7 +7,13 @@ router.get('/', (req, res) => {
         res.json(foundPlanet);
     });
   })
-  
+
+  router.get('/:id', (req, res) => {
+    Planet.findById(req.params.id, (err, getPlanet)=>{
+        res.json(getPlanet);
+    })
+  })
+
   router.post('/', (req, res) => {
     Planet.create(req.body, (err, createdPlanet) => {
         res.json(createdPlanet)
