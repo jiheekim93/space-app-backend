@@ -7,7 +7,14 @@ router.get('/', (req, res) => {
         res.json(foundGear);
     });
   })
-  
+
+  router.get('/:id', (req, res) => {
+    Gear.findById(req.params.id, (err, getGear)=>{
+        res.json(getGear);
+    })
+  })
+
+
   router.post('/', (req, res) => {
     Gear.create(req.body, (err, createdGear) => {
         res.json(createdGear)

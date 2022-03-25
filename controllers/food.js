@@ -6,15 +6,22 @@ router.get('/', (req, res) => {
     Food.find({}, (err, foundFood)=>{
         res.json(foundFood);
     });
+})
+
+router.get('/:id', (req, res) => {
+    Food.findById(req.params.id, (err, getFood)=>{
+        res.json(getFood);
+    })
   })
-  
+
+
 router.post('/', (req, res) => {
     Food.create(req.body, (err, createdFood) => {
         res.json(createdFood)
     })
 })
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', (req, res) =>{
     Food.findByIdAndRemove(req.params.id, (err, deletedFood) => {
         res.json(deletedFood)
     })

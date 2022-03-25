@@ -8,6 +8,12 @@ router.get('/', (req, res) => {
     });
   })
   
+  router.get('/:id', (req, res) => {
+    Ticket.findById(req.params.id, (err, getTicket)=>{
+        res.json(getTicket);
+    })
+  })
+
   router.post('/', (req, res) => {
     Ticket.create(req.body, (err, createdTicket) => {
         res.json(createdTicket)
