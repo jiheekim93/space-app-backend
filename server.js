@@ -11,6 +11,7 @@ const planetController = require('./controllers/planet.js')
 const ticketController = require('./controllers/ticket.js')
 const foodController = require('./controllers/food.js')
 const gearController = require('./controllers/gear.js')
+const cartController = require('./controllers/cart.js')
 
 
 const PORT = process.env.PORT || 3000;
@@ -37,6 +38,7 @@ app.use('/planets', planetController)
 app.use('/tickets', ticketController)
 app.use('/food', foodController)
 app.use('/gear', gearController)
+app.use('/cart', cartController)
 
 app.get('/' , (req, res) => {
   res.send('Hello World!');
