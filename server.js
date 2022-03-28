@@ -27,11 +27,11 @@ app.use(express.json())
 app.use(cors())
 app.use(
   session({
-    secret: process.env.SECRET,
+    secret: 'super secret key',
     resave: true,
+    cookie: { maxAge: 8*60*60*1000 },  // 8 hours
     saveUninitialized: true,
-    cookie: {secure:true}
-  })
+    store: new MongoStore({ mongooseConnection: mongoose.connection })  })
 )
 
 const isAuthenticated = (req, res, next) => {
