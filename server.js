@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require ('mongoose');
 const session = require('express-session')
-const MongoStore = require('connect-mongo')
+
 const cors = require('cors')
 const app = express ();
 require('dotenv').config()
@@ -29,9 +29,8 @@ app.use(
   session({
     secret: process.env.SECRET,
     resave: true,
-    cookie: { maxAge: 8*60*60*1000 },  // 8 hours
-    saveUninitialized: true,
-    store: new MongoStore({ mongooseConnection: mongoose.connection })  })
+    saveUninitialized: true
+  })
 )
 
 const isAuthenticated = (req, res, next) => {
