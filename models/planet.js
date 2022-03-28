@@ -5,8 +5,12 @@ const planetSchema = new mongoose.Schema({
     image: String,
     date_found: String,
     description: String,
-    ticket_price: String,
-    activity: String
+    ticket_price: String, 
+    price_number: Number,
+    activity: String,
+    weather: String,
+    day_length: String, 
+    distance: String,
 })
 
 const Planet = mongoose.model('Planet', planetSchema)

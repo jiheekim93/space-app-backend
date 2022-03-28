@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const ticketSchema = new mongoose.Schema({
-    ticket_price: String,
+    price: Number,
     date: String,
     destination: String
 })

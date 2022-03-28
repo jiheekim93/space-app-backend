@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const gearSchema = new mongoose.Schema({
     name: String,
     image: String,
-    price: String,
+    price: Number,
     description: String,
 })
 
