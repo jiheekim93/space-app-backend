@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require ('mongoose');
 const session = require('express-session')
-
+const MongoStore = require('connect-mongo')
 const cors = require('cors')
 const app = express ();
 require('dotenv').config()
