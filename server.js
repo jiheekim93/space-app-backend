@@ -12,7 +12,10 @@ const ticketController = require('./controllers/ticket.js')
 const foodController = require('./controllers/food.js')
 const gearController = require('./controllers/gear.js')
 const cartController = require('./controllers/cart.js')
-const userController = require('./controllers/users.js')
+const usersController = require('./controllers/users.js')
+const sessionsController = require('./controllers/sessions.js')
+
+
 
 const PORT = process.env.PORT || 3000;
 const MONGODB_URI = process.env.MONGODB_URI;
@@ -46,7 +49,9 @@ app.use('/tickets', ticketController)
 app.use('/food', foodController)
 app.use('/gear', gearController)
 app.use('/cart', cartController)
-app.use('/users', userController)
+app.use('/sessions', sessionsController)
+app.use('/users', usersController)
+
 
 app.get('/' , (req, res) => {
   res.send('Hello World!');
