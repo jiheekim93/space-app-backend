@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const users = express.Router()
 const Users = require('../models/users.js')
 
-
+//
 users.post('/createaccount', (req, res) => {
   req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
   Users.create(req.body, (err, createdUser) => {
