@@ -1,9 +1,6 @@
 {
   "name": "space-app-backend",
   "version": "1.0.0",
-  "engines": {
-    "node": "16.14.2"
-  },
   "description": "",
   "main": "server.js",
   "scripts": {
@@ -14,6 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/jiheekim93/space-app-backend.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -22,16 +20,11 @@
   "homepage": "https://github.com/jiheekim93/space-app-backend#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
-    "connect-mongo": "^4.6.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "express-session": "^1.17.2",
     "method-override": "^3.0.0",
-    "mongoose": "^6.2.8",
-    "socket.io": "^4.4.1"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.15"
+    "mongoose": "^6.2.9"
   }
 }
