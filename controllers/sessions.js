@@ -2,7 +2,7 @@ const bcrypt = require('bcrypt')
 const express = require('express')
 const sessions = express.Router()
 const mongoose = require('mongoose')
-const Users = require('../models/users.js')
+const User = require('../models/users.js')
 
 sessions.get('/new', (req, res) => {
   if (req.session.currentUser) {
@@ -15,7 +15,7 @@ sessions.get('/new', (req, res) => {
 })
 
 sessions.post('/', (req, res) => {
-  Users.findOne({username: req.body.username}, (err, foundUser) => {
+  User.findOne({username: req.body.username}, (err, foundUser) => {
     if (err) {
       console.log(err);
       res.json('Internal Server Error')
