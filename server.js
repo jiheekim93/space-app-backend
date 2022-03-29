@@ -48,7 +48,7 @@ app.use('/food', foodController)
 app.use('/gear', gearController)
 app.use('/cart', cartController)
 app.use('/sessions', sessionsController)
-app.use('/user', userController)
+app.use('/users', userController)
 
 app.get('/' , (req, res) => {
   res.send('Hello World!');
