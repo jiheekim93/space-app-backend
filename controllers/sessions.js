@@ -15,7 +15,7 @@ sessions.get('/new', (req, res) => {
 })
 
 sessions.post('/', (req, res) => {
-  User.findOne({username: req.body.username}, (err, foundUser) => {
+  Users.findOne({username: req.body.username}, (err, foundUser) => {
     if (err) {
       console.log(err);
       res.json('Internal Server Error')
