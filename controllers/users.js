@@ -5,7 +5,7 @@ const users = express.Router()
 const Users = require('../models/users.js')
 
 
-users.post('/', (req, res) => {
+users.post('/createaccount', (req, res) => {
   req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
   Users.create(req.body, (err, createdUser) => {
     if(err){
@@ -17,7 +17,7 @@ users.post('/', (req, res) => {
   })
 });
 
-users.put('/', (req, res) => {
+users.put('/login', (req, res) => {
   console.log(req.body);
   Users.findOne({username: req.body.username}, (err, foundUser) => {
     if(err) {
