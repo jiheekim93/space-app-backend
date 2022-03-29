@@ -13,7 +13,6 @@ const foodController = require('./controllers/food.js')
 const gearController = require('./controllers/gear.js')
 const cartController = require('./controllers/cart.js')
 const userController = require('./controllers/users.js')
-const sessionsController = require('./controllers/sessions.js')
 
 const PORT = process.env.PORT || 3000;
 const MONGODB_URI = process.env.MONGODB_URI;
@@ -21,8 +20,7 @@ const SECRET = process.env.SECRET
 mongoose.connect(MONGODB_URI);
 
 //Middleware
-app.use(express.json())
-app.use(cors())
+app.use(express.static('public'));
 app.use(express.json())
 app.use(cors())
 app.use(
@@ -48,7 +46,6 @@ app.use('/tickets', ticketController)
 app.use('/food', foodController)
 app.use('/gear', gearController)
 app.use('/cart', cartController)
-app.use('/sessions', sessionsController)
 app.use('/users', userController)
 
 app.get('/' , (req, res) => {
