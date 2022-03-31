@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const ticketSchema = new mongoose.Schema({
-            price: Number,
+            price: String,
             date: String,
             destination: String,
             // cart: {type: mongoose.Schema.Types.ObjectId, ref:'Cart', required: true}
