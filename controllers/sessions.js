@@ -10,8 +10,6 @@ sessions.get('/new', (req, res) => {
   } else {
     res.json('no current user')
   }
-
-
 })
 
 sessions.post('/', (req, res) => {

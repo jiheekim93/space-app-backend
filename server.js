@@ -23,17 +23,16 @@ const SECRET = process.env.SECRET
 mongoose.connect(MONGODB_URI);
 
 //Middleware
-app.use(express.static('public'));
 app.use(express.json())
 app.use(cors())
 app.use(
   session({
     secret: process.env.SECRET,
     resave: false,
-    saveUninitialized: true,
-    cookie: { secure: true }
+    saveUninitialized: false
   })
 )
+
 
 const isAuthenticated = (req, res, next) => {
   if (req.session.currentUser) {
@@ -42,7 +41,6 @@ const isAuthenticated = (req, res, next) => {
     res.redirect('/')
   }
 }
-
 
 app.use('/planets', planetController)
 app.use('/tickets', ticketController)
