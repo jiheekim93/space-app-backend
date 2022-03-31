@@ -4,7 +4,10 @@ const cartSchema = new mongoose.Schema({
     name: String, 
     image: String, 
     description: String, 
-    price: String
+    price: String,
+    date: String,
+    destination: String,
+
     
 })
 
