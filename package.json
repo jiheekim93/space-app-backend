@@ -5,7 +5,7 @@
     "node": "16.14.2"
   },
   "description": "",
-    "scripts": {
+  "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/jiheekim93/space-app-backend/issues"
   },
-  "homepage": "https://github.com/jiheekim93/space-app-backend#readme"
+  "homepage": "https://github.com/jiheekim93/space-app-backend#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
 }
