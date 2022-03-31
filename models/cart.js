@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 //?
 const cartSchema = new mongoose.Schema({
-    cartItems: [
+    cartItems: 
         {
             ticket: {type: mongoose.Schema.Types.ObjectId, ref:'Ticket', required: true},
             food: {type: mongoose.Schema.Types.ObjectId, ref:'Food', required: true},
@@ -9,7 +9,7 @@ const cartSchema = new mongoose.Schema({
             // quantity: {type: Number, default: 1},
             price: {type: Number, required: true}
         }
-    ]
+    
 })
 
 const Cart = mongoose.model('Cart', cartSchema)
