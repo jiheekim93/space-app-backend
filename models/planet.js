@@ -11,6 +11,9 @@ const planetSchema = new mongoose.Schema({
     weather: String,
     day_length: String, 
     distance: String,
+    img1: String,
+    img2: String, 
+    img3: String
 })
 
 const Planet = mongoose.model('Planet', planetSchema)
