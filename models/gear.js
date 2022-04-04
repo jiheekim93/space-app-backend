@@ -6,7 +6,7 @@ const gearSchema = new mongoose.Schema({
         price: Number,
         price_string: String,
         description: String,
-        cart: {type: mongoose.Schema.Types.ObjectId, ref:'Cart', required: true}
+
 })
 
 const Gear = mongoose.model('Gear', gearSchema)

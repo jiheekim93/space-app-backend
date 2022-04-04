@@ -6,7 +6,7 @@ const foodSchema = new mongoose.Schema({
     price: Number,
     price_string: String,
     description: String,
-    cart: {type: mongoose.Schema.Types.ObjectId, ref:'Cart', required: true}
+    
 })
 
 const Food = mongoose.model('Food', foodSchema)
